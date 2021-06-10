@@ -436,6 +436,7 @@ bool BsTauTauNtuplizer::fillBranches( edm::Event const & event, const edm::Event
     std::vector<pat::Muon> muoncollection;
     muoncollection.clear();
 
+    
 
 
     // evt Triggered
@@ -1096,6 +1097,8 @@ bool BsTauTauNtuplizer::fillBranches( edm::Event const & event, const edm::Event
 	  math::PtEtaPhiMLorentzVector tau3_fit = daughter_p4(tau_children, 2);
 
 	  //	  math::PtEtaPhiMLorentzVector tlv_tau = tau1_fit + tau2_fit + tau3_fit;
+
+
 
 	  particle_cand Taucand; 
 	  Taucand = calculateIPvariables(extrapolator, tau_part, tau_vertex, closestVertex);

@@ -70,7 +70,7 @@ void NtupleBranches::branch( std::map< std::string, bool >& runFlags ){
   
   if (runFlags["doTriggerDecisions"]) {
     /** HLT trigger decisions */
-    tree_->Branch("HLT_isFired", &HLT_isFired );
+    tree_->Branch("HLT_BPH_isFired", &HLT_BPH_isFired );
   }
 
   
@@ -533,6 +533,7 @@ void NtupleBranches::branch( std::map< std::string, bool >& runFlags ){
 
 
   if (runFlags["doBsTauTau"]){
+    //tree_->Branch("TriggerName", &TriggerName ); //change
     tree_->Branch("IsBsTauTau", &IsBsTauTau );
 
     tree_->Branch("BsTauTau_nCandidates", &BsTauTau_nCandidates );
@@ -603,6 +604,7 @@ void NtupleBranches::branch( std::map< std::string, bool >& runFlags ){
     tree_->Branch("BsTauTau_tau_pi1_charge", &BsTauTau_tau_pi1_charge ); ;  // change
     tree_->Branch("BsTauTau_tau_pi1_dz", &BsTauTau_tau_pi1_dz ); ;  // change
     tree_->Branch("BsTauTau_tau_muon_dr1", &BsTauTau_tau_muon_dr1 ); ;  // change
+    tree_->Branch("HLT_BPH_isFired", &HLT_BPH_isFired ); //change
 
 
     tree_->Branch("BsTauTau_tau_pi2_pt", &BsTauTau_tau_pi2_pt );
@@ -1495,7 +1497,7 @@ void NtupleBranches::reset( void ){
 
   /////////////////
 
-
+  //TriggerName.clear(); //change
   BsTauTau_nCandidates.clear();
 
   BsTauTau_mu1_pt.clear();
